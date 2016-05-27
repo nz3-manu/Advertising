@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="Holamascota" />
+	<link rel="shortcut icon" href="https://www.holamascota.com/publicaciones/img/favicon.png">
+	<title>GATICOS PERSA EXTREMO POR HIMALAYA</title>
+	<link rel="stylesheet" type="text/css" href="https://www.holamascota.com/publicaciones/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.holamascota.com/publicaciones/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.holamascota.com/publicaciones/css/jquery.fancybox.css" />
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+			<!-- NOTE: New style csss -->
+			<link rel="stylesheet" href="css.css" class="css">
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="col-md-4 col-sm-4 col-xs-12 nav-top">
+	  <ul>
+		<li><a href="https://www.holamascota.com/publicaciones/"><i class="fa fa-home"></i>Inicio</a></li>
+		<li><p>/</p></li>
+		<li><a href="https://www.holamascota.com/publicaciones/inicio/anuncios" class="active"><i class="fa fa-list"></i>Publicaciones</a></li>
+		<li><p>/</p></li>
+		<li><a href="https://www.holamascota.com/tienda/" target="_blank"><i class="fa fa-shopping-cart"></i>Tienda</a></li>
+		<li><p>/</p></li>
+		<li><a href="https://holamascota.com/blogholamascota/" target="_blank"><i class="fa fa-pencil"></i>Blog</a></li>
+	  </ul>
+	</div>
+	<div class="col-md-4 col-sm-4 col-xs-12 logo-header">
+	  <div class="navbar-header">
+		<a class="navbar-brand" rel="home" href="https://www.holamascota.com/publicaciones/" title="">
+		  <img src="https://www.holamascota.com/publicaciones/img/logo.png" alt="Hola Mascota">
+		</a>
+	  </div>
+	</div>
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	  <span class="sr-only">Toggle navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+	<div class="navbar-right col-md-4 col-sm-4 col-xs-12">
+	  <button class="btn btn-default" data-toggle="modal" data-target="#modalLogin" onclick="ingresar()">Ingresar</button>
+	  <button class="btn btn-default" data-toggle="modal" data-target="#modalRegistro">Registrarme</button>
+	</div>
+	<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="col-md-12 col-sm-12 col-xs-12 modal-content no-padding">
+	  <div class="col-md-12 col-sm-12 col-xs-12 modal-header">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">Regístrate y Publica Gratis</h4>
+	  </div>
+	  <div class="col-md-12 col-xs-12 center facebookLogin">
+		<div class="col-md-12 col-xs-12 modal-subtitle no-padding"><h5>Registrarme con Facebook</h5></div>
+		<!-- boton facebook -->
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+	  </div>
+	  <div class="col-md-12 col-sm-12 col-xs-12 modal-body">
+		<div class="col-md-12 col-xs-12 modal-subtitle"><h5>Registrarme en holamascota</h5></div>
+		<form action="https://www.holamascota.com/publicaciones/registro" method="post" class="form-inline" role="form" id="default-behavior" onsubmit="return validar_terminos()">
+		  <div class="col-md-6 col-xs-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required="required"/>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-6 col-xs-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required="required"/>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-6 col-xs-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+				<input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" required="required"/>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-6 col-xs-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+				<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required="required"/>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-6 col-xs-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+				<input type="password" class="form-control" id="repassword" name="repassword" placeholder="Confirmar Contraseña" required="required"/>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-6 col-xs-12">
+			<span style="color:red"></span>
+			</span>
+		  </div>
+		  <div class="col-md-12 col-xs-12"><div class="page-header"></div></div>
+		  <div class="col-md-12 col-xs-12">
+			<div class="checkbox">
+			  <label>
+				<input type="checkbox" id="aceptar_terminos"> He leído y acepto los <a href="https://www.holamascota.com/publicaciones/registro/terminos">Términos y Condiciones</a>
+			  </label>
+			</div>
+		  </div>
+		  <div class="col-md-12 col-xs-12">
+			<div class="checkbox">
+			  <label>
+				<input type="checkbox" name="boletin" value="boletin" checked> Quiero recibir notificaciones de holamascota
+			  </label>
+			</div>
+		  </div>
+		</div>
+	  <div class="col-md-12 col-sm-12 col-xs-12 modal-footer">
+		<div class="col-md-6 col-sm-6 col-xs-6"><input type="submit" name="submit" value="Registrarme" class="btn btn-primary"></input></div>
+		<div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></div>
+	  </div>
+	 </form>
+	</div>
+  </div>
+</div>
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="col-md-12 col-xs-12 modal-content no-padding">
+	  <div class="col-md-12 col-xs-12 modal-header">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">Iniciar Sesión</h4>
+	  </div>
+	  <div class="col-md-12 col-xs-12 center facebookLogin">
+		<div class="col-md-12 col-xs-12 modal-subtitle"><h5>Iniciar sesión con Facebook</h5></div>
+		<!-- boton facebook -->
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+	  </div>
+	  <div class="col-md-12 col-xs-12 modal-body no-padding">
+		<div class="col-md-12 col-xs-12 modal-subtitle"><h5>Iniciar sesión en holamascota</h5></div>
+		<form action="https://www.holamascota.com/publicaciones/admin" method="post" class="form-2">
+		  <div class="col-md-6" style="visibility:hidden">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				<input type="text" class="form-control" id="username-login" name="username" placeholder="Correo electrónico o usuario" />
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				<input type="text" class="form-control" id="username-login" name="username" placeholder="Correo electrónico o usuario" />
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-lock"></i></div>
+				<input type="password" class="form-control" id="password-login" name="password" placeholder="Contraseña" />
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="col-md-12 col-xs-12"><div class="page-header"></div></div>
+		  <div class="col-md-6">
+			<div class="checkbox">
+			  <label>
+			   <i class="fa fa-caret-right"></i> <a href="https://www.holamascota.com/publicaciones/registro/recuperar-acceso">Olvidaste la contraseña?</a>
+			  </label>
+			</div>
+		  </div>
+		  <div class="col-md-6">
+			<label>
+			¿Aún no tienes una cuenta? <a href="https://www.holamascota.com/publicaciones/registro">Inscríbete</a>
+			</label>
+		  </div>
+	  </div>
+	  <div class="col-md-12 col-xs-12 modal-footer">
+		<div class="col-md-6 col-sm-6 col-xs-6"><input type="submit" name="submit" value="Login" class="btn btn-primary"></button></div>
+		<div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" style="background:#696969" data-dismiss="modal">Cancelar</button></div>
+		</form>
+	  </div>
+	</div>
+  </div>
+</div>
+<script>
+function validar_terminos(){
+	if( !document.getElementById("aceptar_terminos").checked ){
+		alert("Para registrarse debe aceptar los términos y condiciones de Holamascota.com");
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+</script>
+	<!-- Collect the nav links, forms, and other content for toggling -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="col-md-12 col-sm-12 nav navbar-nav seven-cols">
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6 dropdown">
+	  <a class="dropdown-toggle" data-toggle="dropdown">Mascotas en Venta<b class="caret"></b></a>
+	  <ul class="dropdown-menu">
+		<li><a href="https://www.holamascota.com/publicaciones/venta/perros">Perros en venta</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/venta/gatos">Gatos en venta</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/venta/mascotas_otros">Otros en venta</a></li>
+	  </ul>
+	</li>
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6 dropdown">
+	  <a class="dropdown-toggle" data-toggle="dropdown">Pareja<b class="caret"></b></a>
+	  <ul class="dropdown-menu">
+		<li><a href="https://www.holamascota.com/publicaciones/monta/perros">Perros buscan novia</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/monta/gatos">Gatos buscan novia</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/monta/mascotas-otros">Otras mascotas buscan novia</a></li>
+	  </ul>
+	</li>
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6 dropdown">
+	  <a class="dropdown-toggle" data-toggle="dropdown">Adopción<b class="caret"></b></a>
+	  <ul class="dropdown-menu">
+		<li><a href="https://www.holamascota.com/publicaciones/adopcion/perros">Perros en adopción</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/adopcion/gatos">Gatos en adopción</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/adopcion/mascotas-otros">Otros en adopción</a></li>
+	  </ul>
+	</li>
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6 highlight"><a href="https://www.holamascota.com/tienda/" target="_blank">Tienda</a></li>
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6"><a href="https://www.holamascota.com/publicaciones/paseadores/perros">Paseadores</a></li>
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6 dropdown">
+	  <a class="dropdown-toggle" data-toggle="dropdown">Servicios<b class="caret"></b></a>
+	  <ul class="dropdown-menu">
+		<li><a href="https://www.holamascota.com/publicaciones/adiestradores/perros">Adiestradores</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/tienda-de-mascotas">Tienda de mascotas</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/guarderias-caninas">Guarderias caninas</a></li>
+		<li><a href="https://www.holamascota.com/publicaciones/venta-concentrados-domicilio-online-medellin-colombia">Concentrados a <br/>domicilio Medellín</a></li>
+	  </ul>
+	</li>
+	<li class="col-lg-1 col-md-3 col-sm-4 col-xs-6 highlight"><a href="https://www.holamascota.com/publicaciones/registro">Publicar</a></li>
+  </ul>
+</div><!--<!-- /.navbar-collapse -->  	<div class="container" id="paseador-page">
+  		<div class="col-md-10 col-sm-9 col-xs-12">
+        <ol class="breadcrumb">
+          <li><a href="https://www.holamascota.com/publicaciones/">Inicio</a></li>
+          <li><a href="https://www.holamascota.com/publicaciones/administrador/inicio">Publicaciones</a></li>
+		            <li><a href="https://www.holamascota.com/publicaciones/venta/gatos">gatos en venta </a></li>
+          <li class="active">GATICOS PERSA EXTREMO POR HIMALAYA</li>
+       </ol>
+      </div>
+      <div class="col-md-12 col-sm-12 hidden-xs section">
+        <div class="col-md-5 col-sm-12 col-xs-12">
+          <div class="col-md-12 col-sm-12 col-xs-12 detalles-paseador">
+            <div class="col-md-12 col-xs-12 detalles-paseador-inner">
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Ciudad:</label>
+                <p>ENVIGADO</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Precio:</label>
+                				<p> $    500.000</p>
+              </div>
+			  <div class="col-md-12 col-xs-12 no-padding">
+                <label>Raza:</label>
+                <p>PERSA</p>
+              </div>
+			  <div class="col-md-12 col-xs-12 no-padding">
+                <label>Vacunas:</label>
+                <p>SE VACUNAN A LOS TRES MESES</p>
+              </div>
+			  <div class="col-md-12 col-xs-12 no-padding">
+                <label>Edad:</label>
+                <p>1meses</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Teléfono:</label>
+                <p>3152556214</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Nombre de contacto:</label>
+                <p>Maria Teresa Aristizabal</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Correo de contacto:</label>
+                <p>kanbas2015@outlook.es</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding separator">
+                <img src="https://www.holamascota.com/publicaciones/img/separador.png" class="img-responsive">
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <button class="btn btn-default" data-toggle="modal" data-target="#modal-vendedor">Contactar usuario</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 section imgs-paseador">
+            <div class="col-md-12 col-xs-12 box no-padding">
+
+              <div class="col-md-6 col-xs-6 item">
+                <a class="fancybox" rel="group" href="https://www.holamascota.com/publicaciones/uploads/9835-1.jpg" title="GATICOS PERSA EXTREMO POR HIMALAYA">
+                  <img src="https://www.holamascota.com/publicaciones/uploads/thumbs/9835-1.jpg" class="img-responsive" alt="GATICOS PERSA EXTREMO POR HIMALAYA"/>
+                </a>
+              </div>
+
+              <div class="col-md-6 col-xs-6 item">
+                <a class="fancybox" rel="group" href="https://www.holamascota.com/publicaciones/uploads/9835-5.jpg" title="GATICOS PERSA EXTREMO POR HIMALAYA">
+                  <img src="https://www.holamascota.com/publicaciones/uploads/thumbs/9835-5.jpg" class="img-responsive" alt="GATICOS PERSA EXTREMO POR HIMALAYA"/>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 col-xs-12 descripcion-paseador">
+          <div class="col-md-12 col-xs-12 no-padding">
+            <h3 style="font-family: Cookie,cursive;">GATICOS PERSA EXTREMO POR HIMALAYA</h3>
+          </div>
+          <div class="col-md-12 col-xs-12 no-padding bajada-paseador">
+            <div class="col-md-6 col-xs-6 date">
+              <p><i class="fa fa-calendar"></i> Creado: 02 may 2016</p>
+            </div>
+            <div class="col-md-6 col-xs-12 social">
+              <ul>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="youtube"><i class="fa fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <p>se entregan a los dos meses  aproximadamente en junio, se entregan con la primera purga y certificado de pureza. puedes separarlo</p>
+          </div>
+          <div class="col-md-12 col-xs-12 no-padding separator">
+          <img src="https://www.holamascota.com/publicaciones/img/separador.png" class="img-responsive">
+        </div>
+        </div>
+      </div>
+  		<div class="hidden-lg hidden-md hidden-sm col-xs-12 section">
+        <div class="col-md-12 col-xs-12 descripcion-paseador no-padding">
+          <h3>GATICOS PERSA EXTREMO POR HIMALAYA</h3>
+        </div>
+			<div class="col-md-12 col-sm-12 col-xs-12 section imgs-paseador">
+			<div class="col-md-12 col-xs-12 box no-padding">
+			  					<div class="col-md-6 col-xs-6 item">
+  						<a class="fancybox" rel="group" href="https://www.holamascota.com/publicaciones/uploads/9835-1.jpg" title="GATICOS PERSA EXTREMO POR HIMALAYA">
+  							<img src="https://www.holamascota.com/publicaciones/uploads/thumbs/9835-1.jpg" class="img-responsive" alt="GATICOS PERSA EXTREMO POR HIMALAYA"/>
+  						</a>
+  					</div>
+			  			<div class="col-md-6 col-xs-6 item">
+  						<a class="fancybox" rel="group" href="https://www.holamascota.com/publicaciones/uploads/9835-5.jpg" title="GATICOS PERSA EXTREMO POR HIMALAYA">
+  							<img src="https://www.holamascota.com/publicaciones/uploads/thumbs/9835-5.jpg" class="img-responsive" alt="GATICOS PERSA EXTREMO POR HIMALAYA"/>
+  						</a>
+  					</div>
+	  			</div>
+	  		</div>
+        <div class="col-md-12 col-sm-12 col-xs-12 detalles-paseador">
+          <div class="col-md-12 col-xs-12 detalles-paseador-inner">
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Ciudad:</label>
+                <p>ENVIGADO</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Precio:</label>
+                				<p> $    500.000</p>
+              </div>
+			  <div class="col-md-12 col-xs-12 no-padding">
+                <label>Raza:</label>
+                <p>PERSA</p>
+              </div>
+			  <div class="col-md-12 col-xs-12 no-padding">
+                <label>Vacunas:</label>
+                <p>SE VACUNAN A LOS TRES MESES</p>
+              </div>
+			  <div class="col-md-12 col-xs-12 no-padding">
+                <label>Edad:</label>
+                <p>1meses</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Teléfono:</label>
+                <p>3152556214</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Nombre de contacto:</label>
+                <p>Maria Teresa Aristizabal</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <label>Correo de contacto:</label>
+                <p>kanbas2015@outlook.es</p>
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding separator">
+                <img src="https://www.holamascota.com/publicaciones/img/separador.png" class="img-responsive">
+              </div>
+              <div class="col-md-12 col-xs-12 no-padding">
+                <button class="btn btn-default" data-toggle="modal" data-target="#modal-vendedor">Contactar usuario</button>
+              </div>
+            </div>
+        </div>
+  			<div class="col-md-7 col-xs-12 descripcion-paseador">
+  				<div class="col-md-12 col-xs-12 no-padding bajada-paseador">
+            <div class="col-md-6 col-xs-6 date">
+              <p><i class="fa fa-calendar"></i> Creado: 02 may 2016</p>
+            </div>
+            <div class="col-md-6 col-xs-12 social">
+              <ul>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" data-toggle="tooltip" data-placement="top" title="youtube"><i class="fa fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+  				<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+  					<p>se entregan a los dos meses  aproximadamente en junio, se entregan con la primera purga y certificado de pureza. puedes separarlo</p>
+  				</div>
+  				<div class="col-md-12 col-xs-12 no-padding separator">
+					<img src="https://www.holamascota.com/publicaciones/img/separador.png" class="img-responsive">
+				</div>
+  			</div>
+  		</div>
+  		<div class="col-md-12 col-sm-12 col-xs-12 popular">
+
+		<div class="col-md-12 col-xs-12 popular-header" style="background-color:#FC8942;">
+          <h2>Productos destacados tienda Holamascota</h2>
+        </div>
+		<div class="col-md-12 col-xs-12 box">
+			<div class="box-carousel">
+
+                <div class="col-md-12 col-xs-12 item">
+                  <h3>Arena para gatos Foficat</h3>
+				  <!--<img src="https://www.holamascota.com/publicaciones/img/3.png" class="img-responsive" alt="" />-->
+                  <img src="https://www.holamascota.com/tienda/media/catalog/product/a/r/arena-fofi-cat-x-5-kg.jpg" class="img-responsive" style="width:240px; height:166px" alt="Arena para gatos Foficat" />
+                  <div class="col-md-12 col-xs-12 action-bar">
+                    <div class="col-md-12 col-xs-12 button">
+                      <a href="https://www.holamascota.com/tienda/arena-para-gatos-foficat.html" target="_blank"> <button class="btn btn-display">Ver producto</button> </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-xs-12 item">
+                  <h3>Arena Canada Litter</h3>
+				  <!--<img src="https://www.holamascota.com/publicaciones/img/3.png" class="img-responsive" alt="" />-->
+                  <img src="https://www.holamascota.com/tienda/media/catalog/product/c/a/canadalitter-12_kg.jpg" class="img-responsive" style="width:240px; height:166px" alt="Arena Canada Litter" />
+				  <div class="col-md-12 col-xs-12 action-bar">
+                    <div class="col-md-12 col-xs-12 button">
+                      <a href="https://www.holamascota.com/tienda/venta-arena-para-gatos-canada-litter.html" target="_blank"> <button class="btn btn-display">Ver producto</button> </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-xs-12 item">
+                  <h3>Arena Royal Cat Lavanda</h3>
+                  <img src="https://www.holamascota.com/tienda/media/catalog/product/r/o/royal_cat_lavanda_1_1.jpg" class="img-responsive" style="width:240px;height:166px" alt="Arena Royal Cat Lavanda" />
+                  <div class="col-md-12 col-xs-12 action-bar">
+                    <div class="col-md-12 col-xs-12 button">
+                      <a href="https://www.holamascota.com/tienda/arena-sanitaria-royal-cat-aroma-lavanda.html" target="_blank"> <button class="btn btn-display">Ver producto</button> </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-xs-12 item">
+                  <h3>Arena Sanitaria FreeMiau</h3>
+				  <img src="https://www.holamascota.com/tienda/media/catalog/product/a/r/arena-para-gatos-free-miau-20140719142527.jpg" class="img-responsive" style="width:240px; height:166px" alt="Arena Sanitaria FreeMiau" />
+                  <div class="col-md-12 col-xs-12 action-bar">
+                    <div class="col-md-12 col-xs-12 button">
+                      <a href="https://www.holamascota.com/tienda/arena-sanitaria-para-gato-freemiau.html" target="_blank"> <button class="btn btn-display">Ver producto</button> </a>
+                    </div>
+                  </div>
+                </div>
+			    </div>
+        </div>
+  	  </div>
+	</div>
+	<div class="modal fade" id="modal-vendedor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="col-md-12 col-xs-12 modal-content no-padding">
+	  <div class="col-md-12 col-xs-12 modal-header">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">Contactar usuario</h4>
+	  </div>
+	  <div class="col-md-12 col-xs-12 modal-body no-padding">
+		<div class="col-md-12 col-xs-12 modal-subtitle"></div>
+		<form action="https://www.holamascota.com/publicaciones/enviarCorreos/enviarEmailVendedor" method="post" class="form-2" onsubmit="agregar_informacion_anuncio()">
+		<input type="hidden" name ="correo_vendedor" value="kanbas2015@outlook.es"/>
+		  <div class="col-md-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				<input type="text" class="form-control" name="correo" placeholder="Escribe tu correo" required/>
+			  </div>
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				 <input type="text" class="form-control" name="asunto" placeholder="Asunto" required/>
+			  </div>
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				 <textarea rows="4" class="form-control" name="mensaje" placeholder="Mensaje" required></textarea>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-12 col-xs-12"><div class="page-header"></div></div>
+	  </div>
+	  <input type="hidden" class="form-control" id="url_anuncio" name="url_anuncio" />
+	  <div class="col-md-12 col-xs-12 modal-footer">
+		<div class="col-md-6 col-sm-6 col-xs-6"><input type="submit" name="submit" value="Enviar" class="btn btn-primary" onclick="agregar_informacion_anuncio()"></button></div>
+		<div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></div>
+		</form>
+	  </div>
+	</div>
+  </div>
+</div>
+<!-- estilso textarea -->
+<style>
+textarea { resize: vertical; }
+</style>
+
+<script type="text/javascript">
+function agregar_informacion_anuncio(){
+	var url = window.location.href;
+	document.getElementById("url_anuncio").value = url;
+}
+</script>  <div class="col-md-12 col-xs-12 footer">
+	<div class="col-md-15 col-sm-3">
+		<h4>Sobre holamascota</h4>
+		<p align="justify">Holamascota nace por la necesidad del crecimiento del mercado de las mascotas y la competencia directa e indirecta, por ello nos dedicamos al Comercio electrónico especializado en mascotas, nuestro objetivo es brindar soluciones On-line a personas, veterinarias, criaderos y tiendas que estén interesados en pautar sus productos o servicios sobre las plataformas que ofrecemos.</p>
+	</div>
+	<div class="col-md-15 col-sm-3">
+		<h4>Navegación</h4>
+		<ul>
+			<li><i class="fa fa-caret-right"></i><a href="https://www.holamascota.com/publicaciones/inicio/quienes-somos">Quienes Somos</a></li>
+			<li><i class="fa fa-caret-right"></i><a href="https://www.holamascota.com/publicaciones/inicio/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+			<li><i class="fa fa-caret-right"></i><a href="https://www.holamascota.com/publicaciones/registro/terminos">Términos y Condiciones</a></li>
+			<li><i class="fa fa-caret-right"></i><a href="https://www.holamascota.com/tienda/devoluciones/">Políticas de Devoluciones</a></li>
+		</ul>
+	</div>
+	<div class="col-md-15 col-sm-3">
+		<h4>Formas de pago</h4>
+		<img src="https://www.holamascota.com/publicaciones/img/logo-payu-opt.png" height="60" width="100%" />
+	</div>
+	<div class="col-md-15 col-sm-3">
+		<h4>Boletín de Noticias</h4>
+		<p>Apuntarse a nuestro boletín de:</p>
+		<form action="https://www.holamascota.com/publicaciones/registro/suscripciones" method="POST" role="form" onsubmit="return validar_lista()">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="publicaciones" value="publicaciones">
+					Publicaciones
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="tienda" value="tienda">
+					Tienda
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="blog" value="blog">
+					Blog
+				</label>
+			</div>
+			<div class="form-group has-feedback has-feedback-left">
+				<label class="control-label sr-only">Username</label>
+				<input type="email" name="correo_lista" id="correo_lista" class="form-control" placeholder="Ingrese su Email" />
+				<i class="form-control-feedback fa fa-envelope"></i>
+				<button class="btn">Suscribirme</button>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-15 col-sm-3 contacto">
+		<h4>Tiene alguna consulta?</h4>
+		<button class="btn" data-toggle="modal" data-target="#modal-contacto">Contactese con holamascota</button>
+		<label>Cel: 300 478 7933</label>
+		<label>Dirección: Cra 70 # 32b - 34 Medellín Colombia</label>
+		<label>info@holamascota.com</label>
+	</div>
+	<div class="col-md-12 col-sm-12 col-xs-12 copy">
+	</div>
+</div>
+<div class="modal fade" id="modal-contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="col-md-12 col-xs-12 modal-content no-padding">
+	  <div class="col-md-12 col-xs-12 modal-header">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">Mensaje de contacto</h4>
+	  </div>
+	  <div class="col-md-12 col-xs-12 modal-body no-padding">
+		<div class="col-md-12 col-xs-12 modal-subtitle"></div>
+		<form action="https://www.holamascota.com/publicaciones/enviarCorreos/contacto" method="post" class="form-2" onSubmit="return validaForm()">
+		  <div class="col-md-12">
+			<div class="form-group">
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				 <input type="text" class="form-control" name="name" id="nombre_contacto" placeholder="Nombre" required/>
+			  </div>
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				<input type="text" class="form-control" name="mail" id="email_contacto" placeholder="Escribe tu correo" required/>
+			  </div>
+			  <div class="input-group">
+				<div class="input-group-addon"><i class="fa fa-user"></i></div>
+				 <textarea rows="4" cols="50" class="form-control" name="message" id="mensaje_contacto" required></textarea>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-md-12 col-xs-12"><div class="page-header"></div></div>
+	  </div>
+	  <div class="col-md-12 col-xs-12 modal-footer">
+		<div class="col-md-6 col-sm-6 col-xs-6"><input type="submit" name="submit" value="Enviar" class="btn btn-primary"></button></div>
+		<div class="col-md-6 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></div>
+		</form>
+	  </div>
+	</div>
+  </div>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://www.holamascota.com/publicaciones/css/fuentes.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://www.holamascota.com/publicaciones/css/animate.css" />
+<link rel="stylesheet" type="text/css" href="https://www.holamascota.com/publicaciones/css/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="https://www.holamascota.com/publicaciones/css/owl.theme.css" />
+
+<script src="https://www.holamascota.com/publicaciones/js/jquery-1.11.1.min.js"></script>
+<script src="https://www.holamascota.com/publicaciones/css/menu_publicaciones/jQueryMigratev1.0.0.js"></script>
+<script src="https://www.holamascota.com/publicaciones/js/bootstrap.min.js"></script>
+<script src="https://www.holamascota.com/publicaciones/js/wow.min.js"></script>
+<script src="https://www.holamascota.com/publicaciones/js/owl.carousel.min.js"></script>
+
+<!-- touch safari -->
+<script src="https://www.holamascota.com/publicaciones/js/jquery.ui.touch-punch.min.js"></script>
+
+<script type="text/javaScript">
+function ingresar(){
+	var ingreso = '';
+	if(ingreso !=''){
+		var url = 'https://www.holamascota.com/publicaciones/admin';
+		window.location.assign(url);
+	}
+}
+function validar_lista(){
+	var op1 = document.getElementsByName("publicaciones")[0].checked;
+	var op2 = document.getElementsByName("tienda")[0].checked;
+	var op3 = document.getElementsByName("blog")[0].checked;
+	if(op1==false && op2==false && op3==false){
+		alert("Seleccione las listas a las que se desea inscribir");
+		return false;
+
+	}
+	else if(document.getElementById("correo_lista").value == ''){
+		alert("Por favor ingrese su correo");
+		return false;
+	}
+	else if(!validar_email(document.getElementById("correo_lista").value)){
+		alert("Por favor ingrese un correo válido");
+		return false;
+	}
+	else return true;
+
+}
+
+function validaForm(){
+if($("#nombre_contacto").val() == ""){
+alert("Por favor ingrese su nombre.");
+return false;
+}
+if($("#email_contacto").val() == ''){
+alert("Por favor ingrese su correo");
+return false;
+}
+if(!validar_email($("#email_contacto").val())){
+return false;}
+if($("#mensaje_contacto").val() == ""){
+alert("Por favor ingrese su mensaje.");
+return false;
+}
+return true;
+
+}
+function validar_email(valor){
+//expresion regular.
+var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+if(filter.test(valor))return true;
+else{
+alert("Por favor ingrese un correo válido");
+return false;}
+}
+</script>
+
+<script src="https://www.holamascota.com/publicaciones/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".box-carousel").owlCarousel({
+		autoPlay: 3000, //Set AutoPlay to 3 seconds
+		items : 4,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [979,3]
+		});
+		$('.fancybox').fancybox();
+		$('[data-toggle="tooltip"]').tooltip();
+		new WOW().init();
+	});
+</script>
+</body>
+</html>
